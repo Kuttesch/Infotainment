@@ -33,7 +33,9 @@
 
 .week-container {
   position: relative;
-  align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
   justify-content: center;
   align-items: center;
   /*background-color: rgb(255, 0, 128);*/
@@ -185,18 +187,22 @@
     padding-bottom: 2vh;
   }
 
-  pMonday,
-  pTuesday,
-  pWednesday,
-  pThursday,
-  pFriday,
-  pSaturday,
-  pSunday {
+  .Mo,
+  .Tu,
+  .We,
+  .Th,
+  .Fr,
+  .Sa,
+  .Su {
     font-family: 'Archivo Black';
     position: relative;
     font-size: 30px;
     color: #0c6e95;
-    text-align: center;
+    text-align: baseline;
+  }
+
+  p {
+    opacity: 0;
   }
 
   
