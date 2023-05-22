@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Uhr</title>
+</head>
+<body>
+  <div class="container">
+      <div class="clock-container">
+          <div class="circle1-container">
+              <div class="circle-mili"></div>
+              <div id="hand-mili" class="hand-mili"></div>
+          </div>
+          <div class="circle2-container">
+              <div class="circle-sec"></div>
+              <div id="hand-sec" class="hand hand-sec"></div>
+          </div>
+          <div class="circle3-container">
+              <div class="circle-min"></div>
+              <div id="hand-min" class="hand hand-min"></div>
+          </div>
+          <div class="circle4-container">
+              <div class="circle-hour"></div>
+              <div id="hand-hour" class="hand hand-hour"></div>
+          </div>
+          <div class="circle5-container">
+              <div class="circle-dig"></div>
+              <div id="digital-clock" class="digital-clock"></div>
+          </div>
+    </div>
+    <div class="date-container">
+          <div id="date" class="date"></div>
+          <div class="week-container">
+              <pMonday id="Montag">Mo  &nbsp;</pMonday>
+              <pTuesday>Di  &nbsp;</pTuesday>
+              <pWednesday>Mi  &nbsp;</pWednesday>
+              <pThursday>Do  &nbsp;</pThursday>
+              <pFriday>Fr  &nbsp;</pFriday>
+              <pSaturday>Sa  &nbsp;</pSaturday>
+              <pSunday>So</pSunday>
+          </div>
+    </div>
+    <div class="weather-container">
+          <div class="today-container">
+              <div id="symbol-today" class="symbol-today"></div>
+          </div>
+          <div class="tomorrow-container">
+            <div id="symbol-tomorrow" class="symbol-tomorrow"></div>
+          </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
