@@ -205,7 +205,13 @@
     opacity: 0;
   }
 
-  
+  .temp-current {
+    font-family: 'Archivo Black';
+    position: relative;
+    font-size: 30px;
+    color: #0c6e95;
+    text-align: baseline;
+  }
 
 
 

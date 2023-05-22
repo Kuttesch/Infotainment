@@ -114,10 +114,24 @@
 //Weekdays
 //Weather
 
-  
+fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hourly=temperature_2m&Apparent_Temperature')
+.then(response => response.json())
+.then(data=>{
+  console.log(data);
+  let currentDate = new Date()
+  let currenttime = currentDate.getHours();
 
+  const tempNow = hourlyData.temperature_2m[currenttime];
+})
 
+function updateWeather(){
 
+  let tempToday = document.getElementById('temp-current');
+
+      tempToday.textContent = tempNow.toString();
+
+      console.log(tempNow);
+}
 
 
 
