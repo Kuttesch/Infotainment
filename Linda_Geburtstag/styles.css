@@ -57,21 +57,68 @@
 
 .today-container {
   position: relative;
-  align-items: center;
+  /*align-items: flex-start;*/
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: orangered;
+  /*justify-content: center;*/
+  border: 6px solid #3b3b3b;
+  border-radius: 10%;
   width: 300px;
   height: 30vh;
   padding-right: 10px;
 }
 
+pToday {
+  font-family: 'Archivo Black';
+    align-self: center;
+    font-size: 30px;
+    color: #0c6e95;
+    text-align: baseline;
+}
+
+.top-container {
+  position: relative;
+  display: flex;
+  padding-top: 5%;
+
+}
+
+
+.max-min-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /*background-color: aqua;*/
+  width: 50%;
+  align-items: center;
+}
+
+.symbol-today {
+  /*background-color: aliceblue;*/
+  align-self: right;
+  padding-left: 10%;
+  width: 40%;
+  height: 100%;
+  fill: #0c6e95;
+}
+
+.cur-app-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;/*
+  background-color: aquamarine;*/
+  width: 100%;
+  padding-top: 10%;
+}
+
 .tomorrow-container {
   position: relative;
   align-items: center;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: orange;
+  border: 6px solid #3b3b3b;
+  border-radius: 10%;
   width: 300px;
   height: 30vh;
   padding-left: 10px;
@@ -201,16 +248,38 @@
     text-align: baseline;
   }
 
-  p {
-    opacity: 0;
-  }
-
-  .temp-current {
+  .temp-cur,
+  .temp-max,
+  .temp-min,
+  .temp-app {
     font-family: 'Archivo Black';
     position: relative;
     font-size: 30px;
     color: #0c6e95;
     text-align: baseline;
+  }
+
+  .temp-max,
+  .temp-min {
+    font-size: 20px;
+  }
+  .temp-max {
+    padding-top: 25%;
+  }
+
+  .temp-min {
+    padding-bottom: 25%;
+  }
+
+  .temp-cur {
+    align-self: center;
+    font-size: 60px;
+  }
+
+  .temp-app {
+    align-self: center;
+    font-size: 35px;
+    padding-left: 5vh;
   }
 
 
@@ -224,7 +293,9 @@
   .dark-mode .circle-hour,
   .dark-mode .circle-min,
   .dark-mode .circle-sec,
-  .dark-mode .circle-mili {
+  .dark-mode .circle-mili,
+  .dark-mode .today-container,
+  .dark-mode .tomorrow-container {
     background-color: #313131;
     border-color: #9e9e9e;
   }

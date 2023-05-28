@@ -1,4 +1,4 @@
-fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hourly=temperature_2m&Apparent_Temperature')
+fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hourly=temperature_2m,apparent_temperature,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset&forecast_days=3&timezone=Europe%2FBerlin')
     .then(response => response.json())
     .then(data => {
         console.log(data);
@@ -6,33 +6,24 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hou
         let currentDate = new Date();
         let currentHour = currentDate.getHours();
 
-        const todayForecast = hourlyData.time[currentHour];
-        const tomorrowForecast = hourlyData.time[24];
         const weatherReportElement = document.getElementById('weatherReport');
+        const temperature = document.getElementById('temperature');
+        const temperature2 = document.getElementById('temperature2');
 
-        const todayDate = new Date(todayForecast);
+
         const todayTemperature = hourlyData.temperature_2m[currentHour];
-        /*const todayApparentTemperature = hourlyData.Apparent_Temperature[0];*/
 
-        const todayHtml = `
-            <h2>Heute</h2>
-            <div class="date">${todayDate.toLocaleDateString()}</div>
-            <div class="temperature">Temperatur: ${todayTemperature}°C</div>
-           
-        `;
+        temperature.textContent = todayTemperature.toString();
 
-        const tomorrowDate = new Date(tomorrowForecast);
-        const tomorrowTemperature = hourlyData.temperature_2m[24];
+        let SummetomorrowTemperature = 0;
+        for (let i= 24; i <= 47; i++) {
+            SummetomorrowTemperature += hourlyData.temperature_2m[i];
+        }
+
+        const tomorrowTemperature = SummetomorrowTemperature/24 ;
        /* const tomorrowApparentTemperature = hourlyData.Apparent_Temperature[24];*/
 
-        const tomorrowHtml = `
-            <h2>Morgen</h2>
-            <div class="date">${tomorrowDate.toLocaleDateString()}</div>
-            <div class="temperature">Temperatur: ${tomorrowTemperature}°C</div>
-            
-        `;
-
-        weatherReportElement.innerHTML = todayHtml + tomorrowHtml;
+       temperature2.textContent = tomorrowTemperature.toString();
     })
     .catch(error => {
         console.log('Fehler bei der API-Anfrage:', error);

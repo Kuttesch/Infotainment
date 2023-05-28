@@ -113,30 +113,44 @@
 
 //Weekdays
 //Weather
+/*function updateWeather() {
+fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hourly=temperature_2m,apparent_temperature,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset&forecast_days=3&timezone=Europe%2FBerlin')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+//Variablen
+      const hourlyData = data.hourly;
+      const dailyData = data.daily;
+      let date = new Date();
+      let hour = date.getHours();
 
-fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hourly=temperature_2m&Apparent_Temperature')
-.then(response => response.json())
-.then(data=>{
-  console.log(data);
-  let currentDate = new Date()
-  let currenttime = currentDate.getHours();
+//Heute
+  //Html-Zeug
+      const todayContainer = document.getElementById('today-container');
+      const curTemp = document.getElementById('temp-cur');
+      const maxTemp = document.getElementById('temp-max');
+      const minTemp= document.getElementById('temp-min');
+      const appTemp= document.getElementById('temp-app');
+      const Symbol= document.getElementById('symbol-cur');
+  //Variablen
+      let TempCur = hourlyData.temperature_2m[hour];
+      let TempMax = dailyData.temperature_2m_max[0];
+      let TempMin = dailyData.temperature_2m_min[0];
+      let TempApp = hourly.Data.apparent_temperature[hour];
+      let SymbolId = hourlyData.weathercode[hour];
+  //Schreiben in div
+      curTemp.textContent = TempCur.toString();
+      maxTemp.textContent = TempMax.toString();
+      TempMin.textContent = TempMin.toString();
+      TempApp.textContent = TempApp.toString();
+      
 
-  const tempNow = hourlyData.temperature_2m[currenttime];
-})
 
-function updateWeather(){
-
-  let tempToday = document.getElementById('temp-current');
-
-      tempToday.textContent = tempNow.toString();
-
-      console.log(tempNow);
-}
-
-
-
+    })}*/
 
   updateClock();
   checkTime();
   updateDay();
+  /*updateWeather();*/
+  
 

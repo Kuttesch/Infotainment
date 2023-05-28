@@ -1,0 +1,11 @@
+/*Durchschnittstemperatur morgen*/
+
+let SummetomorrowTemperature = 0;
+for (let i= 24; i <= 47; i++) {
+    SummetomorrowTemperature += hourlyData.temperature_2m[i];
+}
+
+const tomorrowTemperature = SummetomorrowTemperature/24 ;
+
+
+
