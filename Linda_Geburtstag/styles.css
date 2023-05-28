@@ -68,7 +68,7 @@
   padding-right: 10px;
 }
 
-pToday {
+p {
   font-family: 'Archivo Black';
     align-self: center;
     font-size: 30px;
@@ -80,9 +80,28 @@ pToday {
   position: relative;
   display: flex;
   padding-top: 5%;
+  /*background-color: red;*/
 
 }
 
+.max-min-temp-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /*background-color: rgb(200, 255, 0);*/
+  width: 50%;
+  align-items: center;
+}
+
+.up-down-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /*background-color: rgb(255, 0, 221);*/
+  width: 50%;
+  align-items: flex-end;
+
+}
 
 .max-min-container {
   position: relative;
@@ -94,35 +113,95 @@ pToday {
 }
 
 .symbol-today {
-  /*background-color: aliceblue;*/
+  /*background-color: rgb(33, 204, 18);*/
   align-self: right;
   padding-left: 10%;
-  width: 40%;
-  height: 100%;
-  fill: #0c6e95;
+}
+
+.svg-today {
+  width: 125px;
+  height: 125px;
+  transform: scale(1);
 }
 
 .cur-app-container {
+  align-self: center;
   position: relative;
   display: flex;
-  flex-direction: column;/*
-  background-color: aquamarine;*/
-  width: 100%;
+  flex-direction: column;
+  /*background-color: aquamarine;*/
   padding-top: 10%;
 }
 
 .tomorrow-container {
   position: relative;
-  align-items: center;
+  /*align-items: flex-start;*/
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /*justify-content: center;*/
   border: 6px solid #3b3b3b;
   border-radius: 10%;
   width: 300px;
   height: 30vh;
-  padding-left: 10px;
+  padding-right: 10px;
 
+}
+
+.top-container-tom {
+  position: relative;
+  display: flex;
+  padding-top: 5%;
+  /*background-color: red;*/
+
+}
+
+.max-min-temp-container-tom {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /*background-color: rgb(200, 255, 0);*/
+  width: 50%;
+  align-items: center;
+}
+
+.up-down-container-tom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /*background-color: rgb(255, 0, 221);*/
+  width: 50%;
+  align-items: flex-end;
+
+}
+
+.max-min-container-tom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /*background-color: aqua;*/
+  width: 50%;
+  align-items: center;
+}
+
+.symbol-tom {
+  /*background-color: rgb(33, 204, 18);*/
+  align-self: right;
+  padding-left: 10%;
+}
+
+.svg-tom {
+  width: 125px;
+  height: 125px;
+  transform: scale(1);
+}
+
+.cur-app-container-tom {
+  align-self: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /*background-color: aquamarine;*/
+  padding-top: 10%;
 }
 
 
@@ -251,35 +330,53 @@ pToday {
   .temp-cur,
   .temp-max,
   .temp-min,
-  .temp-app {
+  .temp-app,
+  .up,
+  .down,
+  .temp-cur-tom,
+  .temp-max-tom,
+  .temp-min-tom,
+  .temp-app-tom,
+  .up-tom,
+  .down-tom{
     font-family: 'Archivo Black';
     position: relative;
-    font-size: 30px;
     color: #0c6e95;
     text-align: baseline;
   }
 
   .temp-max,
-  .temp-min {
+  .temp-min,
+  .up,
+  .down,
+  .temp-max-tom,
+  .temp-min-tom,
+  .up-tom,
+  .down-tom {
     font-size: 20px;
   }
-  .temp-max {
+
+
+  .temp-max,
+  .temp-max-tom {
     padding-top: 25%;
   }
 
-  .temp-min {
+  .temp-min,
+  .temp-min-tom  {
     padding-bottom: 25%;
   }
 
-  .temp-cur {
-    align-self: center;
+  .temp-cur,
+  .temp-cur-tom  {
+    align-self: flex-start;
     font-size: 60px;
   }
 
-  .temp-app {
-    align-self: center;
-    font-size: 35px;
-    padding-left: 5vh;
+  .temp-app,
+  .temp-app-tom  {
+    align-self: flex-end;
+    font-size: 30px;
   }
 
 

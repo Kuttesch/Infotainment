@@ -1,3 +1,110 @@
+//Weather
+fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hourly=temperature_2m,apparent_temperature,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset&forecast_days=3&timezone=Europe%2FBerlin')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+//Variablen
+      const hourlyData = data.hourly;
+      const dailyData = data.daily;
+      let date = new Date();
+      let hour = date.getHours();
+
+      console.log(hour)
+
+//Heute
+  //Html-Zeug
+      const todayContainer = document.getElementById('today-container');
+      const curTemp = document.getElementById('temp-cur');
+      const maxTemp = document.getElementById('temp-max');
+      const minTemp= document.getElementById('temp-min');
+      const appTemp= document.getElementById('temp-app');
+      const Symbol= document.getElementById('symbol-today');
+  //Variablen
+      const TempCur = hourlyData.temperature_2m[hour];
+      const TempMax = dailyData.temperature_2m_max[0];
+      const TempMin = dailyData.temperature_2m_min[0];
+      const TempApp = hourlyData.apparent_temperature[hour];
+      let SymbolId = hourlyData.weathercode[hour];
+      console.log(SymbolId);
+  //Schreiben in div
+      curTemp.textContent = TempCur.toString();
+      maxTemp.textContent = TempMax.toString();
+      minTemp.textContent = TempMin.toString();
+      appTemp.textContent = TempApp.toString();
+  //Ändern SVG
+  const svgMap = {
+    0: 'clear.svg',
+    1: 'clear.svg',
+    2: 'cloudy.svg',
+    3: 'cloudy.svg',
+    45: 'fog.svg',
+    48: 'fog.svg',
+    51: 'light_rain.svg',
+    53: 'light_rain.svg',
+    55: 'light_rain.svg',
+    56: 'light_rain.svg',
+    57: 'light_rain.svg',
+    61: 'light_rain.svg',
+    66: 'light_rain.svg',
+    63: 'rain.svg',
+    65: 'rain.svg',
+    67: 'rain.svg',
+    71: 'snow.svg',
+    73: 'snow.svg',
+    75: 'snow.svg',
+    80: 'snow.svg',
+    81: 'rain.svg',
+    82: 'rain.svg',
+    85: 'snow.svg',
+    86: 'snow.svg',
+    95: 'storm.svg',
+    96: 'storm.svg',
+    99: 'storm.svg'
+  };
+
+  if (SymbolId in svgMap) {
+    const svgPath = 'svg/'+ svgMap[SymbolId];
+    fetch(svgPath)
+      .then(response => response.text())
+      .then(svgData => {
+        const symbolToday = document.getElementById('symbol-today');
+        symbolToday.innerHTML = svgData;
+        const svgElement = symbolToday.querySelector('svg');
+        svgElement.classList.add('svg-today');
+      })
+  }
+
+//Morgen
+  //Html-Zeug
+  const tomorrowContainer = document.getElementById('tomorrow-container');
+  const curTempTom = document.getElementById('temp-cur-tom');
+  const maxTempTom = document.getElementById('temp-max-tom');
+  const minTempTom= document.getElementById('temp-min-tom');
+  const appTempTom= document.getElementById('temp-app-tom');
+  const SymbolTom= document.getElementById('symbol-today-tom');
+  //Variablen
+  let SumTempCurTom = 0;
+  for (let i=24; i <= 47; i++) {
+    SumTempCurTom += hourlyData.temperature_2m[i];
+    }
+  const TempCurTom = SumTempCurTom/24;
+  const TempMaxTom = dailyData.temperature_2m_max[1];
+  const TempMinTom = dailyData.temperature_2m_min[1];
+  const SumTempAppTom = 0;
+  for (let i=24; i <= 47; i++) {
+    SumTempAppTom += apparent_temperature[i];
+    }
+  const TempAppTom = SumTempAppTom/24;
+  let SymbolIdTom = dailyData.weathercode[1];
+//Schreiben in div
+curTempTom.textContent = TempCurTom.toString();
+maxTempTom.textContent = TempMaxTom.toString();
+minTempTom.textContent = TempMinTom.toString();
+appTempTom.textContent = TempAppTom.toString();
+
+})
+
+
 //Darkmode
   function enableDarkMode() {
       document.body.classList.add('dark-mode');
@@ -112,45 +219,9 @@
   }
 
 //Weekdays
-//Weather
-/*function updateWeather() {
-fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hourly=temperature_2m,apparent_temperature,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset&forecast_days=3&timezone=Europe%2FBerlin')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-//Variablen
-      const hourlyData = data.hourly;
-      const dailyData = data.daily;
-      let date = new Date();
-      let hour = date.getHours();
-
-//Heute
-  //Html-Zeug
-      const todayContainer = document.getElementById('today-container');
-      const curTemp = document.getElementById('temp-cur');
-      const maxTemp = document.getElementById('temp-max');
-      const minTemp= document.getElementById('temp-min');
-      const appTemp= document.getElementById('temp-app');
-      const Symbol= document.getElementById('symbol-cur');
-  //Variablen
-      let TempCur = hourlyData.temperature_2m[hour];
-      let TempMax = dailyData.temperature_2m_max[0];
-      let TempMin = dailyData.temperature_2m_min[0];
-      let TempApp = hourly.Data.apparent_temperature[hour];
-      let SymbolId = hourlyData.weathercode[hour];
-  //Schreiben in div
-      curTemp.textContent = TempCur.toString();
-      maxTemp.textContent = TempMax.toString();
-      TempMin.textContent = TempMin.toString();
-      TempApp.textContent = TempApp.toString();
-      
-
-
-    })}*/
 
   updateClock();
   checkTime();
   updateDay();
-  /*updateWeather();*/
   
 
