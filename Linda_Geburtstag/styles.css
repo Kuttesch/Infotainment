@@ -58,6 +58,10 @@
   padding-right: 10px;
 }
 
+.today-container {
+  margin-right: 20px;
+}
+
 p {
   font-family: 'Archivo Black';
   align-self: center;
@@ -279,7 +283,7 @@ p {
 .temp-min-tom,
 .up-tom,
 .down-tom {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .temp-max,
