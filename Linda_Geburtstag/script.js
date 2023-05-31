@@ -1,4 +1,25 @@
 //Weather
+function init() {
+    Internet();
+}
+function Internet() {
+    const online =navigator.onLine;
+    
+    if(online){
+    updateClock();
+    checkTime();
+    updateDay();
+    fetchWeatherData();
+    setInterval(fetchWeatherData, 15 * 60 * 1000);
+    } else {
+    updateClock();
+    checkTime();
+    updateDay();
+    console.log('Kein Internet');
+    }
+}
+
+function fetchWeatherData() {
 fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hourly=temperature_2m,apparent_temperature,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset&forecast_days=3&timezone=Europe%2FBerlin')
     .then(response => response.json())
     .then(data => {
@@ -88,17 +109,17 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hou
 
         // Variablen
         let SumTempCurTom = 0;
-        for (let i = 24; i <= 47; i++) {
+        for (let i = 30; i <= 42; i++) {
             SumTempCurTom += hourlyData.temperature_2m[i];
         }
-        const TempCurTom = (SumTempCurTom / 24).toFixed(1) + '°';
+        const TempCurTom = (SumTempCurTom / 12).toFixed(1) + '°';
         const TempMaxTom = dailyData.temperature_2m_max[1] + '°';
         const TempMinTom = dailyData.temperature_2m_min[1] + '°';
         let SumTempAppTom = 0;
-        for (let i = 24; i <= 47; i++) {
+        for (let i = 30; i <= 42; i++) {
             SumTempAppTom += hourlyData.apparent_temperature[i];
         }
-        const TempAppTom = (SumTempAppTom / 24).toFixed(1) + '°';
+        const TempAppTom = (SumTempAppTom / 12).toFixed(1) + '°';
         let SymbolIdTom = dailyData.weathercode[1];
 
         // Schreiben in div
@@ -109,7 +130,7 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hou
 
         // SVG ändern
         if (SymbolIdTom in svgMap) {
-            const svgPath = 'svg/' + svgMap[SymbolId];
+            const svgPath = 'svg/' + svgMap[SymbolIdTom];
             fetch(svgPath)
                 .then(response => response.text())
                 .then(svgData => {
@@ -120,6 +141,7 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=47.49&longitude=12.05&hou
                 });
         }
     });
+}
 
 // Darkmode
 function enableDarkMode() {
@@ -166,22 +188,22 @@ function updateClock() {
     let hourHand = document.getElementById('hand-hour');
     let minuteHand = document.getElementById('hand-min');
     let secondHand = document.getElementById('hand-sec');
-    let milsecHand = document.getElementById('hand-mili');
+    //let milsecHand = document.getElementById('hand-mili');
 
     let degPerHour = 360 / 12;
     let degPerMinute = 360 / 60;
     let degPerSecond = 360 / 60;
-    let degPerMilSec = 360 / 1000;
+    //let degPerMilSec = 360 / 1000;
 
     let hourRotation = (hours % 12) * degPerHour + minutes * degPerMinute / 12;
     let minuteRotation = minutes * degPerMinute;
     let secondRotation = seconds * degPerSecond;
-    let milsecRotation = miliseconds * degPerMilSec;
+    //let milsecRotation = miliseconds * degPerMilSec;
 
     hourHand.style.transform = 'rotate(' + hourRotation + 'deg)';
     minuteHand.style.transform = 'rotate(' + minuteRotation + 'deg)';
     secondHand.style.transform = 'rotate(' + secondRotation + 'deg)';
-    milsecHand.style.transform = 'rotate(' + milsecRotation + 'deg)';
+   //milsecHand.style.transform = 'rotate(' + milsecRotation + 'deg)';
 
     setTimeout(updateClock, 1);
 }
@@ -234,7 +256,4 @@ function updateDay() {
 }
 
 // Weekdays
-
-updateClock();
-checkTime();
-updateDay();
+init();

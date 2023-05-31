@@ -24,15 +24,15 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.25"
-     inkscape:cx="1146"
-     inkscape:cy="552"
+     inkscape:zoom="1"
+     inkscape:cx="547.5"
+     inkscape:cy="333"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="1072"
      inkscape:window-y="846"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2" />
+     inkscape:current-layer="svg5" />
   <defs
      id="defs2" />
   <g
@@ -1181,6 +1181,34 @@
        r="3" />
   </g>
   <g
+     id="g9436-6-3-0-1-9-7"
+     transform="matrix(-0.47121659,0.47145042,-5.4001208,-5.4001413,855.45189,815.23052)"
+     style="display:inline">
+    <rect
+       style="display:inline;fill:#d51010;fill-opacity:1;stroke-width:0.4265"
+       id="rect8677-3-5-4-5-9-3"
+       width="12.000922"
+       height="19.938322"
+       x="36.578022"
+       y="129.92923"
+       transform="matrix(1,1.1099617e-5,-2.2778034e-5,1,0,0)" />
+    <ellipse
+       style="display:inline;fill:#d51010;fill-opacity:1;stroke-width:0.156357"
+       id="path9405-4-0-3-8-2-2"
+       cx="42.605938"
+       cy="129.93053"
+       rx="6.0009041"
+       ry="0.52377009"
+       transform="matrix(1,1.9760801e-5,-2.2641731e-4,0.99999997,0,0)" />
+    <ellipse
+       style="display:inline;fill:#d51010;fill-opacity:1;stroke-width:0.529206"
+       id="path9405-8-1-7-4-2-7-49"
+       cx="42.577133"
+       cy="149.83492"
+       rx="6.0009041"
+       ry="0.52377009" />
+  </g>
+  <g
      id="g9436-6-8"
      transform="matrix(0.34131615,0.34130137,-0.34133872,0.34132394,99.2163,69.722083)"
      style="display:none">
@@ -1350,7 +1378,7 @@
   </g>
   <g
      id="g8444"
-     style="display:inline"
+     style="display:none"
      transform="matrix(0.96243804,0,0,0.91103217,-234.60465,-9.7260569)">
     <ellipse
        style="fill:#ff9c00;fill-opacity:1;stroke-width:0.282559"
@@ -1370,7 +1398,7 @@
   <g
      id="g9436-6-3-0-1-9-3"
      transform="matrix(8.0293895e-5,0.48268347,-3.7061288,-1.0458109e-5,593.46804,23.51291)"
-     style="display:inline"
+     style="display:none"
      inkscape:transform-center-x="-30.294792">
     <rect
        style="display:inline;fill:#ffc800;fill-opacity:1;stroke-width:0.27094"
@@ -1409,7 +1437,7 @@
   <g
      id="g9436-6-3-0-1-9-3-4"
      transform="matrix(-0.2412722,0.41805629,-3.2095965,-1.8530735,530.40533,300.06384)"
-     style="display:inline"
+     style="display:none"
      inkscape:transform-center-x="-25.976876"
      inkscape:transform-center-y="14.880985">
     <rect
@@ -1449,7 +1477,7 @@
   <g
      id="g9436-6-3-0-1-9-3-4-1"
      transform="matrix(-0.417976,0.24141127,-1.8530554,-3.209607,338.21287,507.8287)"
-     style="display:inline"
+     style="display:none"
      inkscape:transform-center-x="-14.88208"
      inkscape:transform-center-y="25.976109">
     <rect
@@ -1489,7 +1517,7 @@
   <g
      id="g9436-6-3-0-1-9-3-4-1-6"
      transform="matrix(-0.48268347,8.029258e-5,1.044898e-5,-3.7061289,67.63782,590.95977)"
-     style="display:inline"
+     style="display:none"
      inkscape:transform-center-x="-4.8324335e-06"
      inkscape:transform-center-y="30.294781">
     <rect
@@ -1529,7 +1557,7 @@
   <g
      id="g9436-6-3-0-1-9-3-4-1-6-9"
      transform="matrix(-0.41805629,-0.2412722,1.8530735,-3.2095966,-208.61481,527.27941)"
-     style="display:inline"
+     style="display:none"
      inkscape:transform-center-x="14.880982"
      inkscape:transform-center-y="25.976865">
     <rect
@@ -1569,7 +1597,7 @@
   <g
      id="g9436-6-3-0-1-9-3-4-1-6-9-6"
      transform="matrix(-0.41805629,-0.2412722,1.8530735,-3.2095966,-208.5642,527.21048)"
-     style="display:inline"
+     style="display:none"
      inkscape:transform-center-x="14.880982"
      inkscape:transform-center-y="25.976865">
     <rect
@@ -1609,7 +1637,7 @@
   <g
      id="g9436-6-3-0-1-9-3-9"
      transform="matrix(0.24141127,0.417976,-3.2096069,1.8530553,510.61533,-247.66104)"
-     style="display:inline"
+     style="display:none"
      inkscape:transform-center-x="-26.7306"
      inkscape:transform-center-y="-13.575298">
     <rect
@@ -1775,5 +1803,33 @@
          cy="147.36217"
          r="3" />
     </g>
+  </g>
+  <g
+     id="g9436-6-3-0-1-9-7-1"
+     transform="matrix(-0.47145042,-0.47121659,5.4001413,-5.4001209,-655.31621,855.44843)"
+     style="display:inline">
+    <rect
+       style="display:inline;fill:#d51010;fill-opacity:1;stroke-width:0.4265"
+       id="rect8677-3-5-4-5-9-3-1"
+       width="12.000922"
+       height="19.938322"
+       x="36.578022"
+       y="129.92923"
+       transform="matrix(1,1.1099617e-5,-2.2778034e-5,1,0,0)" />
+    <ellipse
+       style="display:inline;fill:#d51010;fill-opacity:1;stroke-width:0.156357"
+       id="path9405-4-0-3-8-2-2-1"
+       cx="42.605938"
+       cy="129.93053"
+       rx="6.0009041"
+       ry="0.52377009"
+       transform="matrix(1,1.9760801e-5,-2.2641731e-4,0.99999997,0,0)" />
+    <ellipse
+       style="display:inline;fill:#d51010;fill-opacity:1;stroke-width:0.529206"
+       id="path9405-8-1-7-4-2-7-49-8"
+       cx="42.577133"
+       cy="149.83492"
+       rx="6.0009041"
+       ry="0.52377009" />
   </g>
 </svg>
